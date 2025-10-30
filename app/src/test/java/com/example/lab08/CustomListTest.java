@@ -25,4 +25,21 @@ public class CustomListTest {
         // Verify it's no longer in the list
         assertFalse(list.hasCity(edmonton));
     }
+
+    @Test
+    public void testCountCities() {
+        CustomList list = new CustomList();
+
+        // Initially empty
+        assertEquals(0, list.countCities());
+
+        // Add cities
+        City calgary = new City("Calgary", "AB");
+        City edmonton = new City("Edmonton", "AB");
+        list.addCity(calgary);
+        list.addCity(edmonton);
+
+        // Should have 2 cities
+        assertEquals(2, list.countCities());
+    }
 }
